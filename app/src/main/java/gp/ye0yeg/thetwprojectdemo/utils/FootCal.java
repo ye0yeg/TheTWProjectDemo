@@ -17,7 +17,7 @@ public class FootCal {
 //        this.height = height;
 //    }
 
-    public int calFootRatio(int footHeight, int footWidth) {
+    public static int calFootRatio(int footHeight, int footWidth) {
         int calRadio;
         float footRatio = (float) footHeight / (float) footWidth;
 
@@ -26,15 +26,15 @@ public class FootCal {
             calRadio = 0;
         } else if (footRatio > 3.2) {
 //            countBig++;  Big的情况
-            calRadio = 1;
+            calRadio = 2;
         } else {
 //            countNormal++;  Normal的情况
-            calRadio = 2;
+            calRadio = 1;
         }
         return calRadio;
     }
 
-    public int calFootHeight(int height) {
+    public static int calFootHeight(int height) {
         int calHeight;
         //height 的取值范围为10-20之间
         if (height < 12) {
@@ -42,10 +42,10 @@ public class FootCal {
             calHeight = 0;
         } else if (height > 18) {
             //高
-            calHeight = 1;
+            calHeight = 2;
         } else {
             //Normal
-            calHeight = 2;
+            calHeight = 1;
         }
         return calHeight;
     }
