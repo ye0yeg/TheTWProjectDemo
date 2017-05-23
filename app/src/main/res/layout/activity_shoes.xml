@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager xmlns:ye0yeg="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/vp_shoes_viewpager"
+        ye0yeg:pstsIndicatorColor="#009988">
+
+        <android.support.v4.view.PagerTabStrip
+            android:id="@+id/psts_shoes_pt"
+            style="@style/pagertab_icon_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></android.support.v4.view.PagerTabStrip>
+    </android.support.v4.view.ViewPager>
+</RelativeLayout>

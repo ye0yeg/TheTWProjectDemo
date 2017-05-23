@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="pagertab_icon_style">
+        <item name="pstsIndicatorColor">#1A000000</item>
+        <item name="pstsTabBackground">@color/colorAccent</item>
+        <item name="pstsTabPaddingLeftRight">@color/colorAccent</item>
+        <item name="pstsUnderlineColor">@color/colorAccent</item>
+    </style>
+
 </resources>

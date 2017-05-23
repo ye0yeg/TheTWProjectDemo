@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">TheTWProjectDemo</string>
+    <!--
+    鞋子种类(shoes variety)  
+    Athletic shoes 
+    /Sports shoes运动鞋  Casual shoes便鞋  
+    Hiking shoes/Traveling shoes旅游鞋  Slipper拖鞋  Sandals凉鞋  Boots马靴  
+    Work boots工作鞋  Axoid沙滩鞋  Canvas帆布鞋  
+    Sport boots运动鞋  Pumps高跟鞋  
+    Climbing shoes登山鞋  Football shoes足球鞋  Jogging shoes慢跑鞋  Basketball shoes篮球鞋  Canvas帆布鞋  Casual shoes便鞋  Pumps高跟鞋  Leisure休闲鞋  
+    Tennis shoes网球鞋  Baseball shoes棒球鞋  Aerobic shoes舞蹈鞋 
+    -->
+    <string-array name="main_titles">
+        <item>Sports</item>
+        <item>Casual</item>
+        <item>Hiking</item>
+        <item>Traveling</item>
+        <item>Slipper拖鞋</item>
+        <item>Sandals凉鞋</item>
+        <item>LISBoots马靴</item>
+    </string-array>
 </resources>

@@ -17,8 +17,6 @@ import gp.ye0yeg.thetwprojectdemo.R;
 import gp.ye0yeg.thetwprojectdemo.utils.FootCal;
 import gp.ye0yeg.thetwprojectdemo.utils.UIUtils;
 
-import static gp.ye0yeg.thetwprojectdemo.R.mipmap.middle;
-
 /**
  * Created by Administrator on 5/22/2017.
  */
@@ -34,6 +32,8 @@ public class GetDataActivity extends AppCompatActivity {
     Button bt_analyse;
     @ViewInject(R.id.iv_getdata_foot_size)
     ImageView iv_foot_size;
+    @ViewInject(R.id.bt_getdata_shoes)
+    Button bt_shoes;
 
     private int footHeight;
     private int footWidth;
@@ -48,8 +48,9 @@ public class GetDataActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        setContentView(R.layout.getdata_activity);
+        setContentView(R.layout.activity_getdata);
         x.view().inject(this);
+        iv_foot_size.setImageResource(R.mipmap.middle);
     }
 
     private void initEvent() {
@@ -59,7 +60,7 @@ public class GetDataActivity extends AppCompatActivity {
                 int radio = FootCal.calFootRatio(Integer.parseInt(String.valueOf(et_foot_height.getText())),Integer.parseInt(String.valueOf(et_foot_width.getText())));
                 if(radio==0){
                     iv_foot_size.setImageResource(R.mipmap.little);
-                }else if(radio==2){
+                }else if(radio==1){
                     iv_foot_size.setImageResource(R.mipmap.middle);
                 }else{
                     iv_foot_size.setImageResource(R.mipmap.big);
@@ -67,14 +68,18 @@ public class GetDataActivity extends AppCompatActivity {
                 int footHeight = FootCal.calFootHeight(Integer.parseInt(String.valueOf(et_height.getText())));
                 Toast.makeText(UIUtils.getContext(),"Your foot"+ FootCal.calResult(radio,footHeight),Toast.LENGTH_SHORT).show();
                 //该地方可以使用根据预判不同来更换节点图片
-
             }
         });
 
+        bt_shoes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     private void initData()  {
-        iv_foot_size.setImageResource(R.mipmap.middle);
         setRandomData();
         while (footHeight-footWidth<20) {
             setRandomData();
@@ -84,8 +89,6 @@ public class GetDataActivity extends AppCompatActivity {
         et_height.setText(height+"");
     }
 
-
-
     private void setRandomData(){
         //10-50
         footHeight = footRandom(50);
@@ -94,11 +97,9 @@ public class GetDataActivity extends AppCompatActivity {
         //height 的取值范围为10-20之间
         height = footRandom(20);
     }
-
     private int footRandom(int num) {
             Random random = new Random();
             int footNum = random.nextInt(num-10);
             return footNum+10;
     }
-
 }

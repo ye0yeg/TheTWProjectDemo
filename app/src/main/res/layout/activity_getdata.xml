@@ -86,4 +86,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/bt_getdata_shoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's find some shoes!"
+        />
+
+
+
 </LinearLayout>
