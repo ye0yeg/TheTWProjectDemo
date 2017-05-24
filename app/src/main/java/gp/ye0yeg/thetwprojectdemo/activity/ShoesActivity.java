@@ -45,8 +45,8 @@ public class ShoesActivity extends AppCompatActivity {
         x.view().inject(this);
         mainTitle = UIUtils.getStringArr(R.array.main_titles);
         MainFragmentStatePagerAdapter adapter= new MainFragmentStatePagerAdapter(getSupportFragmentManager());
-//        vp_viewpager.setAdapter(adapter);
-        vp_viewpager.setAdapter(new HomeAdapter());
+        vp_viewpager.setAdapter(adapter);
+//        vp_viewpager.setAdapter(new HomeAdapter());
 //        psts_tabs.setViewPager(vp_viewpager);
     }
 
