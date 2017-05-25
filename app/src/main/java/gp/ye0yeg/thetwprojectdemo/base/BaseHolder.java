@@ -21,7 +21,7 @@ public abstract class BaseHolder<T> {
     public BaseHolder(){
         holderView = initHolderView();
 
-        holderView.setTag(this);
+//        holderView.setTag(this);
     }
     /*
     * 刷新视图

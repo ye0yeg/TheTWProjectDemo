@@ -33,6 +33,8 @@ public class ShoesActivity extends AppCompatActivity {
     private PagerSlidingTabStrip psts_tabs;
     private String[] mainTitle;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

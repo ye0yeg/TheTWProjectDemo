@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
-import gp.ye0yeg.thetwprojectdemo.R;
 import gp.ye0yeg.thetwprojectdemo.holder.PictureHolder;
 import gp.ye0yeg.thetwprojectdemo.holder.SportHolder;
 import gp.ye0yeg.thetwprojectdemo.utils.UIUtils;
@@ -22,13 +21,19 @@ import gp.ye0yeg.thetwprojectdemo.utils.UIUtils;
  */
 public class SportsFragment extends BaseFragment {
 
+    String[] pics= new String[7];
+
+    private ListView listView;
+
     /*
-    * 获取数据
-    * */
+            * 获取数据
+            * */
     @Override
     protected void initData() {
 
     }
+
+
 
     /*
     * 加载视图
@@ -36,22 +41,22 @@ public class SportsFragment extends BaseFragment {
     @Override
     protected View initView() {
         PictureHolder picHolder = new PictureHolder();
-        ListView listView = new ListView(UIUtils.getContext());
+        listView = new ListView(UIUtils.getContext());
         picHolder.setDataAndRefreshHolderView(null);
         View headView = picHolder.getHolderView();
         listView.setCacheColorHint(Color.YELLOW);
         listView.setFastScrollEnabled(true);
         listView.addHeaderView(headView);
         listView.setAdapter(new myAdapter());
+        listView.deferNotifyDataSetChanged();
         return listView;
     }
 
     class myAdapter extends BaseAdapter {
-
         //初始化holder
         @Override
         public int getCount() {
-            return 11;
+            return pics.length;
         }
 
         @Override
@@ -71,10 +76,9 @@ public class SportsFragment extends BaseFragment {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            SportHolder sportHolder = new SportHolder();
-            View view = View.inflate(UIUtils.getContext(), R.layout.item_shoes_info, null);
-
-            return view;
+            SportHolder sportHolder = new SportHolder(); //初始化的时候已经初始化视图
+            sportHolder.setDataAndRefreshHolderView(position);
+            return sportHolder.getHolderView();
         }
     }
 
